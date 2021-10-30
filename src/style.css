@@ -19,7 +19,7 @@ html {
   background-color: white;
   color: black;
   padding: 5px;
-  margin: 10px;
+  margin: 20px;
   line-height: 1.1rem;
   font-weight: 700;
   justify-self: flex-start;
@@ -63,4 +63,43 @@ html {
 }
 #units option {
   color: black;
+}
+/* Weekly View CSS */
+.week-view {
+  display: flex;
+  justify-content: space-evenly;
+}
+.today-container {
+  height: 300px;
+  width: 250px;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 5px lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.today-container p {
+  text-align: center;
+}
+.location {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.description {
+  font-size: 1.5rem;
+}
+.current-temp {
+  font-size: 6rem;
+  font-weight: 700;
+}
+.hilow-temp {
+  font-size: 1.5rem;
+}
+.week-container {
+  height: 300px;
+  width: 60%;
+  margin-top: 30px;
+  background-color: lightgray;
 }
