@@ -20,7 +20,7 @@
       crossorigin="anonymous"
     />
 
-    <script src="main.js"></script>
+    <script defer src="main.js"></script>
   </head>
   <body>
     <header>
@@ -31,7 +31,7 @@
           <p>App</p>
         </div>
         <div class="search-container">
-          <form action="" class="search">
+          <form action="" id="search-form">
             <input
               type="text"
               name="search"
@@ -40,7 +40,6 @@
             />
             <i class="fas fa-search search-icon"></i>
           </form>
-          <!-- <button type="button" class="search-btn">Search</button> -->
         </div>
         <div class="units-container">
           <select name="units" id="units">

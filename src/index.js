@@ -4,6 +4,10 @@ import "./style.css";
 
 const APIkey = "37271f928c057ef8a096af53267154c8";
 
+// Elements
+const searchForm = document.querySelector("#search-form");
+const searchInput = document.querySelector("#search");
+
 // Temperature conversion
 const getTempCelsius = function (tempKelvin) {
   return Math.round(tempKelvin - 273.15);
@@ -14,9 +18,19 @@ const getTempFahrenheit = function (tempKelvin) {
 };
 
 // Get weather from city input
-const getCurrentWeather = async function (city) {
+const getCurrentWeatherCity = async function (city) {
   const response = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`,
+    { mode: "cors" }
+  );
+  const data = await response.json();
+  console.log(getTempCelsius(data.main.temp));
+};
+
+// Get weather from zip code input
+const getCurrentWeatherZip = async function (zip) {
+  const response = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${APIkey}`,
     { mode: "cors" }
   );
   const data = await response.json();
@@ -56,3 +70,14 @@ const getUserPosition = function () {
 };
 
 getUserPosition();
+
+// Listeners
+searchForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log(searchInput.value);
+  if (Number(searchInput.value)) {
+    getCurrentWeatherZip(Number(searchInput.value));
+  } else {
+    getCurrentWeatherCity(searchInput.value);
+  }
+});
