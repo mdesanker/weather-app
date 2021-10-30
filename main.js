@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n\n\nconsole.log(\"test\");\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n\n\nconst APIkey = \"37271f928c057ef8a096af53267154c8\";\n\nconst getTempCelsius = function (tempKelvin) {\n  return Math.round(tempKelvin - 273.15);\n};\n\nconst getTempFahrenheit = function (tempKelvin) {\n  return Math.round((tempKelvin - 273.15) * (9 / 5) + 32);\n};\n\nconst getCurrentWeather = async function (city) {\n  const response = await fetch(\n    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`,\n    { mode: \"cors\" }\n  );\n  const data = await response.json();\n  console.log(getTempCelsius(data.main.temp));\n};\n\ngetCurrentWeather(\"detroit\");\n\nconsole.log(getTempFahrenheit(283.15));\nconsole.log(getTempCelsius(283.15));\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ })
 
