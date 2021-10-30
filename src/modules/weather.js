@@ -11,10 +11,13 @@ const getCurrentWeatherCity = async function (city) {
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`,
       { mode: "cors" }
     );
+    if (!response.ok) {
+      throw new Error("Not a valid city");
+    }
     const data = await response.json();
     updateTodayPanel(data);
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
   }
 };
 
@@ -25,10 +28,13 @@ const getCurrentWeatherZip = async function (zip) {
       `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${APIkey}`,
       { mode: "cors" }
     );
+    if (!response.ok) {
+      throw new Error("That is not a valid zip code");
+    }
     const data = await response.json();
     updateTodayPanel(data);
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
   }
 };
 
@@ -39,10 +45,13 @@ const getCurrentWeatherCoords = async function (lat, lng) {
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${APIkey}`,
       { mode: "cors" }
     );
+    if (!response.ok) {
+      throw new Error("Those are not valid coordinates");
+    }
     const data = await response.json();
     updateTodayPanel(data);
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
   }
 };
 
