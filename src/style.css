@@ -8,3 +8,59 @@
 html {
   font-family: "Roboto", sans-serif;
 }
+/* Header CSS */
+.header-container {
+  background-color: rgb(52, 52, 52);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  margin: 10px;
+  line-height: 1.1rem;
+  font-weight: 700;
+  justify-self: flex-start;
+}
+.search-container {
+  background-color: gray;
+  border-radius: 30px;
+}
+#search,
+.search-icon {
+  font-size: 20px;
+  margin: 0;
+  line-height: 30px;
+  color: white;
+}
+#search {
+  border: none;
+  background-color: gray;
+  text-align: center;
+  margin-left: 50px;
+  padding: 10px 0;
+}
+.search-icon {
+  padding: 10px 20px 10px 5px;
+}
+#search::placeholder {
+  color: white;
+}
+#search:focus {
+  outline: none;
+}
+.units-container {
+  margin-right: 20px;
+}
+#units {
+  font-size: 24px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+}
+#units option {
+  color: black;
+}

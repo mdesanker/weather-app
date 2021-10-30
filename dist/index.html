@@ -24,14 +24,30 @@
   </head>
   <body>
     <header>
-      <div class="search-container">
-        <i class="fas fa-cloud-sun-rain"></i>
-        <input
-          type="text"
-          name="search"
-          id="search"
-          placeholder="Enter a city or zipcode"
-        />
+      <div class="header-container">
+        <div class="logo">
+          <p>The</p>
+          <p>Weather</p>
+          <p>App</p>
+        </div>
+        <div class="search-container">
+          <form action="" class="search">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search City or Zip Code"
+            />
+            <i class="fas fa-search search-icon"></i>
+          </form>
+          <!-- <button type="button" class="search-btn">Search</button> -->
+        </div>
+        <div class="units-container">
+          <select name="units" id="units">
+            <option value="c" default>°C</option>
+            <option value="f">°F</option>
+          </select>
+        </div>
       </div>
     </header>
   </body>
