@@ -1,7 +1,5 @@
 "use strict";
 
-import { convertCelsius, convertFahrenheit } from "./conversion";
-
 const location = document.querySelector(".location");
 const description = document.querySelector(".description");
 const currentTemp = document.querySelector(".current-temp");
