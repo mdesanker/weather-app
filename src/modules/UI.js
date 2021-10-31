@@ -10,10 +10,10 @@ const hiLowTemp = document.querySelector(".hilow-temp");
 const updateTodayPanel = function (data) {
   location.textContent = data.name;
   description.textContent = data.weather[0].main;
-  currentTemp.textContent = `${convertCelsius(data.main.temp)}°`;
-  hiLowTemp.textContent = `H: ${convertCelsius(
+  currentTemp.textContent = `${Math.round(data.main.temp)}°`;
+  hiLowTemp.textContent = `H: ${Math.round(
     data.main.temp_max
-  )}° L: ${convertCelsius(data.main.temp_min)}°`;
+  )}° L: ${Math.round(data.main.temp_min)}°`;
 };
 
 export { updateTodayPanel };

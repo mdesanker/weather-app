@@ -9,16 +9,29 @@ import { getUserPosition } from "./modules/location";
 // Elements
 const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search");
+const units = document.querySelector("#units");
+
+let currentLocation;
 
 // Listeners
 searchForm.addEventListener("submit", function (e) {
   e.preventDefault();
+  currentLocation = searchInput.value;
   if (Number(searchInput.value)) {
-    getCurrentWeatherZip(Number(searchInput.value));
+    getCurrentWeatherZip(Number(searchInput.value), units.value);
   } else {
-    getCurrentWeatherCity(searchInput.value);
+    getCurrentWeatherCity(searchInput.value, units.value);
   }
   searchInput.value = "";
+});
+
+units.addEventListener("change", function (e) {
+  console.log(units.value);
+  if (Number(currentLocation)) {
+    getCurrentWeatherZip(Number(currentLocation), units.value);
+  } else {
+    getCurrentWeatherCity(currentLocation, units.value);
+  }
 });
 
 getUserPosition();

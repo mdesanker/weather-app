@@ -4,6 +4,7 @@ import { getCurrentWeatherCoords } from "./weather";
 
 const success = function (position) {
   const { latitude: lat, longitude: lng } = position.coords;
+  console.log(position);
   getCurrentWeatherCoords(lat, lng);
 };
 
