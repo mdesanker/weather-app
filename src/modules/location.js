@@ -2,6 +2,8 @@
 
 import { getCurrentWeatherCoords } from "./weather";
 
+const GeoAPI = "";
+
 const units = document.querySelector("#units");
 
 const success = function (position) {

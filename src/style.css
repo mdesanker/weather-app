@@ -65,9 +65,11 @@ html {
   color: black;
 }
 /* Weekly View CSS */
-.week-view {
+.weather-output {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 .today-container {
   height: 300px;
@@ -97,9 +99,11 @@ html {
 .hilow-temp {
   font-size: 1.5rem;
 }
-.week-container {
-  height: 300px;
-  width: 60%;
-  margin-top: 30px;
-  background-color: lightgray;
+.overview {
+  margin: 30px;
+  font-size: 22px;
+  letter-spacing: 0.05rem;
+  max-width: 50%;
+  text-align: center;
+  line-height: 2rem;
 }

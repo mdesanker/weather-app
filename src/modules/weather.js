@@ -1,6 +1,6 @@
 "use strict";
 
-import { updateTodayPanel } from "./UI";
+import { updateTodayPanel, updateOverview } from "./UI";
 
 const APIkey = "37271f928c057ef8a096af53267154c8";
 
@@ -16,6 +16,7 @@ const getCurrentWeatherCity = async function (city, units = "metric") {
     }
     const data = await response.json();
     updateTodayPanel(data);
+    updateOverview(data);
   } catch (err) {
     console.error(err.message);
   }
@@ -33,6 +34,7 @@ const getCurrentWeatherZip = async function (zip, units = "metric") {
     }
     const data = await response.json();
     updateTodayPanel(data);
+    updateOverview(data);
   } catch (err) {
     console.error(err.message);
   }
@@ -50,6 +52,7 @@ const getCurrentWeatherCoords = async function (lat, lng, units = "metric") {
     }
     const data = await response.json();
     updateTodayPanel(data);
+    updateOverview(data);
   } catch (err) {
     console.error(err.message);
   }
