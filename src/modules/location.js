@@ -2,10 +2,11 @@
 
 import { getCurrentWeatherCoords } from "./weather";
 
+const units = document.querySelector("#units");
+
 const success = function (position) {
   const { latitude: lat, longitude: lng } = position.coords;
-  console.log(position);
-  getCurrentWeatherCoords(lat, lng);
+  getCurrentWeatherCoords(lat, lng, units.value);
 };
 
 const error = function () {

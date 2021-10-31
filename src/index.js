@@ -26,11 +26,14 @@ searchForm.addEventListener("submit", function (e) {
 });
 
 units.addEventListener("change", function (e) {
-  console.log(units.value);
-  if (Number(currentLocation)) {
-    getCurrentWeatherZip(Number(currentLocation), units.value);
+  if (!currentLocation) {
+    getUserPosition();
   } else {
-    getCurrentWeatherCity(currentLocation, units.value);
+    if (Number(currentLocation)) {
+      getCurrentWeatherZip(Number(currentLocation), units.value);
+    } else {
+      getCurrentWeatherCity(currentLocation, units.value);
+    }
   }
 });
 
